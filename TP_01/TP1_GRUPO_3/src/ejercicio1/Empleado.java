@@ -56,7 +56,9 @@ public class Empleado {
 	 * @param id The id of the given employee. Must be an integer. 
 	 */
 	public void setId(int id) {
-		this.id = id;
+		if (id > 0) {
+			this.id = id;
+		}
 	}
 	
 	/**
@@ -64,7 +66,9 @@ public class Empleado {
 	 * @param nombre The employee name as a string.
 	 */
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if(!nombre.isEmpty()) {
+			this.nombre = nombre;
+		}
 	}
 	
 	/**
@@ -72,6 +76,8 @@ public class Empleado {
 	 * @param edad The age of the employee, as an integer.
 	 */
 	public void setEdad(int edad) {
-		this.edad = edad;
+		if(edad > 0) {
+			this.edad = edad;
+		}
 	}
 }
