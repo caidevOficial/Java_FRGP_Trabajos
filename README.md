@@ -52,19 +52,19 @@
     </tr>
     <tr>
       <td>
-        <a href=""><img alt="LinkedIn_M" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
+        <a href="https://www.linkedin.com/"><img alt="LinkedIn_M" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
       </td>
       <td>
         <a href="https://www.linkedin.com/in/facundo-falcone/"><img alt="LinkedIn_F" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
       </td>
       <td>
-        <a href=""><img alt="LinkedIn_L" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
+        <a href="https://www.linkedin.com/"><img alt="LinkedIn_L" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
       </td>
       <td>
-        <a href=""><img alt="LinkedIn_L" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
+        <a href="https://www.linkedin.com/"><img alt="LinkedIn_L" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
       </td>
       <td>
-        <a href=""><img alt="LinkedIn_L" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
+        <a href="https://www.linkedin.com/"><img alt="LinkedIn_L" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" width="125px" height="30px"/>
       </td>
     </tr>
     <tr>
