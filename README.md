@@ -8,7 +8,7 @@
         </td>
     </tr>
     <tr>
-        <td align="center">
+        <td align="center" colspan='2'>
             <img alt="Logo Java" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg?raw=true" height="90px" />
         </td>
     </tr>
