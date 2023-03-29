@@ -28,9 +28,31 @@ public class Empleado {
 
 	// ATTRIBUTES
 	
-	private int id;
+	private final int id;
 	private String nombre;
 	private int edad;
+	
+	
+	//ATRIBUTO DE LA CLASE 
+	static int cont = 0; 
+	
+	
+	//CONSTRUCTORES
+	public Empleado() 
+	{
+		this.id = 1000 + cont;
+		this.nombre = "Sin Nombre";
+		this.edad = 0;
+		cont++;
+	}
+	
+	public Empleado(String Nombre, int Edad) 
+	{
+		this.id = 1000 + cont;
+		this.nombre = Nombre;
+		this.edad = Edad;
+		cont++;
+	}
 	
 	// GETTERS AND SETTERS
 	
@@ -42,6 +64,10 @@ public class Empleado {
 		return id;
 	}
 	
+//	public Empleado() {
+//		super();
+//	}
+
 	/**
 	 * Gets the employee name.
 	 * @return The employee name as a string.
@@ -62,12 +88,12 @@ public class Empleado {
 	 * Sets the employee ID
 	 * @param id The id of the given employee. Must be an integer. 
 	 */
-	public void setId(int id) {
-		if (id > 0) {
-			this.id = id;
-		}
-	}
-	
+//	public void setId(int id) {
+//		if (id > 0) {
+//			this.id = id;
+//		}
+//	}
+//	
 	/**
 	 * Sets the employee name.
 	 * @param nombre The employee name as a string.
