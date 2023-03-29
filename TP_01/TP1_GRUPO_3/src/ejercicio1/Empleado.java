@@ -109,4 +109,13 @@ public class Empleado {
 			this.edad = edad;
 		}
 	}
+	
+	
+	public String ToString() {
+		return    "*************************\n"+
+				  "* Nombre: "+nombre+".\n"+
+				  "* Edad  : "+edad+", \n"+
+				  "* Legajo: "+id+". \n"+
+				  "*************************";
+		}
 }
