@@ -34,19 +34,29 @@ public class Empleado {
 	
 	
 	//ATRIBUTO DE LA CLASE 
-	static int cont = 0; 
+	static int cont = 0;
+	static int baseID = 1000;
 	
 	
 	//CONSTRUCTORES
-	public Empleado() 
-	{
-		this.id = 1000 + cont;
-		cont++;
+	
+	/**
+	 * Constructor of the Employee class, initializes the object with "Sin Nombre" as a name
+	 * and 99 as an age.
+	 */
+	public Empleado(){
+		this("Sin Nombre", 99);
 	}
 	
-	public Empleado(String Nombre, int Edad) 
-	{
-		this.id = 1000 + cont;
+	/**
+	 * Constructor of the class Employee with two parameters.
+	 * @param Nombre The employee name.
+	 * @param Edad The employee age, should be an integer.
+	 */
+	public Empleado(String Nombre, int Edad){
+		this.setNombre("Sin Nombre");
+		this.setEdad(Edad);
+		this.id = baseID + cont;
 		cont++;
 	}
 	
@@ -59,10 +69,7 @@ public class Empleado {
 	public int getId() {
 		return id;
 	}
-	
-//	public Empleado() {
-//		super();
-//	}
+
 
 	/**
 	 * Gets the employee name.
@@ -111,11 +118,18 @@ public class Empleado {
 	}
 	
 	
+	/**
+	 * Gets a message that indicates the next available ID for the employee.
+	 */
+	public static void devuelveProximoID() {
+		System.out.println("El proximo ID sera: " + (baseID + cont));
+	}
+	
 	public String ToString() {
 		return    "*************************\n"+
-				  "* Nombre: "+nombre+".\n"+
-				  "* Edad  : "+edad+", \n"+
-				  "* Legajo: "+id+". \n"+
+				  "* Nombre: "+this.nombre+".\n"+
+				  "* Edad  : "+this.edad+", \n"+
+				  "* Legajo: "+this.id+". \n"+
 				  "*************************";
 		}
 }
