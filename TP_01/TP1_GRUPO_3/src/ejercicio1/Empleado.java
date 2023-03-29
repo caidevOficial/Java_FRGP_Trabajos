@@ -41,16 +41,12 @@ public class Empleado {
 	public Empleado() 
 	{
 		this.id = 1000 + cont;
-		this.nombre = "Sin Nombre";
-		this.edad = 0;
 		cont++;
 	}
 	
 	public Empleado(String Nombre, int Edad) 
 	{
 		this.id = 1000 + cont;
-		this.nombre = Nombre;
-		this.edad = Edad;
 		cont++;
 	}
 	
