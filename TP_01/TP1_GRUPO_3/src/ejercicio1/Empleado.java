@@ -54,7 +54,7 @@ public class Empleado {
 	 * @param Edad The employee age, should be an integer.
 	 */
 	public Empleado(String Nombre, int Edad){
-		this.setNombre("Sin Nombre");
+		this.setNombre(Nombre);
 		this.setEdad(Edad);
 		this.id = baseID + cont;
 		cont++;
