@@ -24,6 +24,8 @@
 
 package ejercicio1;
 
+import Ejercicio1.Empleado;
+
 /**
  * @author <Grupo 3 - UTN FRGP>
  *
@@ -35,6 +37,21 @@ public class Principal {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Empleado E0 = new Empleado();
+		System.out.println(E0.toString());
+		
+		Empleado E1 = new Empleado("Simba", 21);
+		System.out.println(E1.toString());
+		
+		Empleado E2 = new Empleado("Timon", 22);
+		System.out.println(E2.toString());
+		
+		Empleado E3 = new Empleado("Pumba", 23);
+		System.out.println(E3.toString());
+		
+		Empleado.devuelveProximoID;
+		
 		
 	}
 
