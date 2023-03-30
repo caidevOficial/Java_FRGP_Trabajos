@@ -53,9 +53,9 @@ public class Empleado {
 	 * @param Nombre The employee name.
 	 * @param Edad The employee age, should be an integer.
 	 */
-	public Empleado(String Nombre, int Edad){
-		this.setNombre(Nombre);
-		this.setEdad(Edad);
+	public Empleado(String nombre, int edad){
+		this.setNombre(nombre);
+		this.setEdad(edad);
 		this.id = baseID + cont;
 		cont++;
 	}
@@ -69,7 +69,6 @@ public class Empleado {
 	public int getId() {
 		return id;
 	}
-
 
 	/**
 	 * Gets the employee name.
@@ -87,16 +86,6 @@ public class Empleado {
 		return edad;
 	}
 
-	/**
-	 * Sets the employee ID
-	 * @param id The id of the given employee. Must be an integer. 
-	 */
-//	public void setId(int id) {
-//		if (id > 0) {
-//			this.id = id;
-//		}
-//	}
-//	
 	/**
 	 * Sets the employee name.
 	 * @param nombre The employee name as a string.
@@ -125,11 +114,19 @@ public class Empleado {
 		System.out.println("El proximo ID sera: " + (baseID + cont));
 	}
 	
-	public String ToString() {
-		return    "*************************\n"+
-				  "* Nombre: "+this.nombre+".\n"+
-				  "* Edad  : "+this.edad+", \n"+
-				  "* Legajo: "+this.id+". \n"+
-				  "*************************";
-		}
+	
+	/**
+	 * Creates a string with the entire info of the object attributes.
+	 * @return The message with the info of the object attributes as a string.
+	 */
+	public String toString() {
+		StringBuilder mensaje = new StringBuilder();
+		mensaje.append("*************************\n");
+		mensaje.append("* Nombre: "+this.nombre+".\n");
+		mensaje.append("* Edad  : "+this.edad+", \n");
+		mensaje.append("* Legajo: "+this.id+". \n");
+		mensaje.append("*************************\n");
+		
+		return mensaje.toString();
+	}
 }

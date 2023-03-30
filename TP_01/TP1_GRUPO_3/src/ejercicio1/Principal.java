@@ -24,7 +24,10 @@
 
 package ejercicio1;
 
-import Ejercicio1.Empleado;
+import java.util.LinkedList;
+import java.util.List;
+
+import ejercicio1.Empleado;
 
 /**
  * @author <Grupo 3 - UTN FRGP>
@@ -36,23 +39,23 @@ public class Principal {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		Empleado empleado0 = new Empleado();
-		System.out.println(E0.toString());
+		List<Empleado> empleados = new LinkedList<Empleado>();
 		
-		Empleado empleado1 = new Empleado("Simba", 21);
-		System.out.println(E1.toString());
+		for(int index = 0; index < 4; index++) {
+			if(empleados.isEmpty()) {
+				empleados.add(new Empleado());
+			} else {
+				int edad_random = (int)(Math.random() * 50 + 1);
+				empleados.add(new Empleado("Empleado_" + index, edad_random));
+			}
+		}
 		
-		Empleado empleado2 = new Empleado("Timon", 22);
-		System.out.println(E2.toString());
-		
-		Empleado empleado3 = new Empleado("Pumba", 23);
-		System.out.println(E3.toString());
+		for(int index = 0; index < 4; index++) {
+			System.out.println(empleados.get(index).toString());
+		}
 		
 		Empleado.devuelveProximoID();
-		
-		
 	}
 
 }
