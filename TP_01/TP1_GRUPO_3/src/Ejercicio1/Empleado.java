@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package ejercicio1;
+package Ejercicio1;
 
 public class Empleado {
 

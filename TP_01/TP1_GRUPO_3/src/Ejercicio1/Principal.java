@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-package ejercicio1;
+package Ejercicio1;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import ejercicio1.Empleado;
+import Ejercicio1.Empleado;
 
 /**
  * @author <Grupo 3 - UTN FRGP>
@@ -41,7 +41,7 @@ public class Principal {
 	public static void main(String[] args) {
 		
 		List<Empleado> empleados = new LinkedList<Empleado>();
-		final int maximoEmpleados = 4;
+		final int maximoEmpleados = 5;
 		
 		for(int index = 0; index < maximoEmpleados; index++) {
 			if(empleados.isEmpty()) {
@@ -56,6 +56,12 @@ public class Principal {
 		}
 		
 		Empleado.devuelveProximoID();
+		
+		
+	
+		
+		
+		
 	}
 
 }
