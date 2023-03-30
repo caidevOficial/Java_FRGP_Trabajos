@@ -41,17 +41,17 @@ public class Principal {
 	public static void main(String[] args) {
 		
 		List<Empleado> empleados = new LinkedList<Empleado>();
+		final int maximoEmpleados = 4;
 		
-		for(int index = 0; index < 4; index++) {
+		for(int index = 0; index < maximoEmpleados; index++) {
 			if(empleados.isEmpty()) {
 				empleados.add(new Empleado());
 			} else {
-				int edad_random = (int)(Math.random() * 50 + 1);
-				empleados.add(new Empleado("Empleado_" + index, edad_random));
+				empleados.add(new Empleado("Empleado_" + index, (int)(Math.random() * 50 + 1)));
 			}
 		}
 		
-		for(int index = 0; index < 4; index++) {
+		for(int index = 0; index < maximoEmpleados; index++) {
 			System.out.println(empleados.get(index).toString());
 		}
 		
