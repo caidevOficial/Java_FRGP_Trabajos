@@ -97,7 +97,10 @@
             <td>
                 <ul>
                     <li>
-                        <a href="./TP_01\TP1_GRUPO_3">Trabajo Pr&aacute;ctico 01
+                        <a href="./TrabajoPractico_01\TP_01">Trabajo Pr&aacute;ctico 01
+                    </li>
+			  <li>
+                        <a href="./TrabajoPractico_01\TP_02">Trabajo Pr&aacute;ctico 02
                     </li>
                 </ul>
             </td>
