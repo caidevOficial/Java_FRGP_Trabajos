@@ -26,6 +26,7 @@
  * 
  */
 package ejercicio1;
+import java.util.ArrayList;
 
 /**
  * @author <Grupo 3 - UTN FRGP>
@@ -36,9 +37,23 @@ public class mainEjercicio1_a {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args)
+	{
+	
+		ArrayList<Profesor> Profesores = new ArrayList<Profesor>(5);
+			
+		Profesores.add(new Profesor("Jirafales", 45, "Historia", 10));
+		Profesores.add(new Profesor("Chavo", 20, "Geografia", 8));
+		Profesores.add(new Profesor("Kiko", 21, "Ed.Fisica", 5));
+		Profesores.add(new Profesor("Chilindrina", 25, "Arte", 6));
+		Profesores.add(new Profesor("DonRamon", 40, "Economia", 11));
+		
+		for (Profesor item : Profesores)
+		{
+			System.out.println(item.toString());
+		}
 
+		
 	}
 
 }

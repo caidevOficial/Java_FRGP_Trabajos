@@ -27,6 +27,11 @@
  */
 package ejercicio1;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.TreeSet;
+
 /**
  * @author <Grupo 3 - UTN FRGP>
  *
@@ -36,9 +41,42 @@ public class mainEjercicio1_b {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) 
+	{
+		/*TreeSet<String> Profesores = new TreeSet<String>();
+		
+		
+		Profesores.add("Thian");
+		Profesores.add("Paul");
+		Profesores.add("Hadaluz");
+		Profesores.add("Evelyn");
+			for (String item : Profesores)
+		{
+			System.out.println(item);
+		}
+		*/
+		
+		Profesor p1 = new Profesor("Jirafales", 45, "Historia", 10);
+		Profesor p2 = new Profesor("Chavo", 20, "Geografia", 8);
+		Profesor p3 = new Profesor("Kiko", 21, "Ed.Fisica", 5);
+		Profesor p4 = new Profesor("Chilindrina", 25, "Arte", 6);
+		Profesor p5 = new Profesor("DoniaFlorinda", 40, "Matematica", 11);
+		
+		TreeSet<Profesor> Profesores = new TreeSet<Profesor>();
+		Profesores.add(p5);
+		Profesores.add(p2);
+		Profesores.add(p4);
+		Profesores.add(p3);
+		Profesores.add(p1);
+		
+		Iterator<Profesor> it = Profesores.iterator();
+			
+		while(it.hasNext())
+		{
+			Profesor aux = it.next();
+			System.out.println(aux.toString());
+		}
+		
 	}
 
 }
