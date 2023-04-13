@@ -13,7 +13,9 @@ public class Principal {
 			System.out.println("Es el mismo profesor");
 		}
 		
-
+		Profesor pro = new Profesor();
+		
+		System.out.println(pro.toString());
 	}
 
 }

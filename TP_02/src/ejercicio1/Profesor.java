@@ -43,6 +43,14 @@ public class Profesor extends Empleado{
 	 * @param cargo The teacher position.
 	 * @param antiguedadDocente The teacher seniority, should be a positive integer.
 	 */
+	
+	public Profesor() {
+		super();
+		this.setCargo("SinCargo");
+		this.setAntiguedadDocente(0);
+	}
+	
+	
 	public Profesor(String nombre, int edad, String cargo, int antiguedadDocente) {
 		super(nombre, edad);
 		this.setCargo(cargo);
@@ -99,8 +107,8 @@ public class Profesor extends Empleado{
 		mensaje.append("* Legajo: "+this.getId()+". \n");
 		mensaje.append("* Nombre: "+this.getNombre()+".\n");
 		mensaje.append("* Edad  : "+this.getEdad()+", \n");
-		mensaje.append("* Cargo  : "+this.getEdad()+", \n");
-		mensaje.append("* Antiguedad  : "+this.getEdad()+", \n");
+		mensaje.append("* Cargo  : "+this.getCargo()+", \n");
+		mensaje.append("* Antiguedad  : "+this.getAntiguedadDocente()+", \n");
 		
 		return mensaje.toString();
 	}
