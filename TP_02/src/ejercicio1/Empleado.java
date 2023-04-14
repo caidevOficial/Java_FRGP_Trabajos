@@ -24,7 +24,9 @@
 
 package ejercicio1;
 
-public class Empleado {
+//import Ejercicio1.Empleado;
+
+public class Empleado implements Comparable{
 
 	// ATTRIBUTES
 	
@@ -158,6 +160,15 @@ public class Empleado {
 		} else if (!nombre.equals(other.nombre))
 			return false;
 		return true;
+	}
+	
+	
+	
+	@Override
+	public int compareTo(Object aux) 
+	{
+		// TODO Auto-generated method stub
+		return  ((Empleado) aux).getId() - this.getId();
 	}
 	
 	
