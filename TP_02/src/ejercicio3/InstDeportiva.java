@@ -1,6 +1,6 @@
 package ejercicio3;
 
-public class InstDeportiva {
+public class InstDeportiva extends Edificio {
 	///atributos
 	
 	private final int ID;

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ProductoCongelado extends Producto {
 
-	double TempCongRecom;
+	private double TempCongRecom;
 
 	
 	public ProductoCongelado(Date fechaCadu, int Lote,double tempCongRecom) {
