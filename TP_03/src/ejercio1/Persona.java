@@ -194,13 +194,13 @@ public class Persona implements Comparable<Persona>
 		public int compareTo(Persona o) {
 			
 			
-			if(o.nombre.charAt(0) == this.nombre.charAt(0)) 
+			if(o.apellido.charAt(0) == this.apellido.charAt(0)) 
 			{
 				return 0;
 			}
 			
 			
-			if(o.nombre.charAt(0) < this.nombre.charAt(0)) 
+			if(o.apellido.charAt(0) < this.apellido.charAt(0)) 
 			{
 				return 1;
 			}
