@@ -109,7 +109,7 @@ public class Persona implements Comparable<Persona>
 		 * @param DNI The string that represents a DNI to validate.
 		 * @return True if the given DNI is correct, False otherwise.
 		 */
-		private boolean VerificarDniInvalido(String DNI)
+		public boolean VerificarDniInvalido(String DNI)
 		{
 			if(!DNI.matches("[0-9]*")){
 				   return false;
