@@ -11,6 +11,13 @@ public class Archivo {
 
 	private String ruta;
 	
+	public Archivo() {	 
+	}
+	
+	public Archivo(String Path) {
+		this.ruta = Path; 
+	}
+
 	//gets y sets
 	public String getRuta() {
 		return ruta;
@@ -49,6 +56,7 @@ public class Archivo {
 			FileWriter entrada = new FileWriter(ruta, true);
 			BufferedWriter miBuffer = new BufferedWriter(entrada);
 			miBuffer.write(frase);
+			miBuffer.newLine();
 			miBuffer.close();
 			entrada.close();
 		}catch (IOException e) {

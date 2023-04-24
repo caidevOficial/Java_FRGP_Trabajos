@@ -1,5 +1,6 @@
 package ejercicio1;
 
+import java.io.FileWriter;
 import java.util.TreeSet;
 
 
@@ -17,8 +18,10 @@ public class Main
 		TreeSet<Persona> ListaPersona = new TreeSet<Persona>();
 		ListaPersona = aux.LeetDatos();
 		
+		
+		Archivo Escribir = new Archivo("Resultado.txt"); 
 		for(Persona item : ListaPersona) {
-			System.out.println(item.toString());
+			Escribir.escribe_lineas(item.toString());			
 			
 		}
 	}
