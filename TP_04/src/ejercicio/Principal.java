@@ -1,0 +1,109 @@
+package ejercicio;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Panel;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class Principal extends JFrame {
+
+	private JPanel contentPane;
+	public String TipoVentana = "Menu";
+	public String VentanaActual = "Menu";
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Principal frame = new Principal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */	
+	
+	public Principal() {
+		
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JButton btnEjercicio1 = new JButton("Ejercicio 1");
+		btnEjercicio1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ejercicio1 Ejer = new Ejercicio1();
+				VentanaActual = "Ejercicio1";
+				// NO SE PORQUE SINO LO HAGO INVISIBLE PRIMERO NO SE RE DIBUJA EL PANEL
+				contentPane.setVisible(false);
+				setContentPane(Ejer);				
+				contentPane.setVisible(true);
+				setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+				
+			}
+		});
+		btnEjercicio1.setBounds(157, 46, 110, 23);
+		panel.add(btnEjercicio1);
+		
+		JButton btnEjercicio2 = new JButton("Ejercicio 2");
+		btnEjercicio2.setBounds(157, 114, 110, 23);
+		panel.add(btnEjercicio2);
+		
+		JButton btnEjercicio3 = new JButton("Ejercicio 3");
+		btnEjercicio3.setBounds(157, 182, 110, 23);
+		panel.add(btnEjercicio3);
+		
+		//ACA ENTRA CUANDO SE APRETA CERRAR LA VENTANA
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				Principal panel = new Principal();				
+				if (VentanaActual == panel.TipoVentana) {
+					setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				}	
+				contentPane.setVisible(false);
+				setContentPane(contentPane);
+				contentPane.setVisible(true);			
+				VentanaActual = "Menu";
+			}
+		});
+		
+	}
+	
+	private int VuelveAPrincipal(JPanel contentPane)
+	{
+		Principal panel = new Principal();
+		 System.out.print("llegue aca 1");
+		contentPane.setVisible(false);
+		setContentPane(contentPane);
+		contentPane.setVisible(true);
+		return 1;
+	}
+	
+	
+
+}
