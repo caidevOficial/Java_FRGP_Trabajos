@@ -93,7 +93,7 @@ public class Ejercicio1 extends JPanel {
 				
 				else {
 					
-					JLabel.setText("Los datos ingresados son: " + txtNombre.getText() + 
+					JLabel.setText("Los datos ingresados son: " + txtNombre.getText() + " " + 
 							txtApellido.getText() +  " " + txtTelefono.getText() + " " + txtFechaNac.getText());	
 					
 					txtNombre.setText("");
