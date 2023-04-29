@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 public class Ejercicio1 extends JPanel {
@@ -64,13 +65,30 @@ public class Ejercicio1 extends JPanel {
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				if(txtNombre.getText().equals("") && 
-				   txtApellido.getText().equals("") && 
-				   txtTelefono.getText().equals("") &&
+				if(txtNombre.getText().equals("") || 
+				   txtApellido.getText().equals("") || 
+				   txtTelefono.getText().equals("") ||
 			       txtFechaNac.getText().equals("")) 
 				{
+					if(txtNombre.getText().equals("")) 
+					{
+						txtNombre.setBackground(Color.red);						
+					}
 					
-//					System.out.println("Hola");	
+					if(txtApellido.getText().equals("")) 
+					{
+						txtApellido.setBackground(Color.red);						
+					}
+					
+					if(txtTelefono.getText().equals("")) 
+					{
+						txtTelefono.setBackground(Color.red);						
+					}
+					
+					if(txtFechaNac.getText().equals("")) 
+					{
+						txtFechaNac.setBackground(Color.red);						
+					}
 				}
 				
 				else {
