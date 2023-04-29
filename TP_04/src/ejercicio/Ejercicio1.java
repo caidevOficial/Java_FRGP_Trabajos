@@ -4,12 +4,15 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ejercicio1 extends JPanel {
 	private JTextField txtNombre;
 	private JTextField txtApellido;
 	private JTextField txtTelefono;
 	private JTextField txtFechaNac;
+	public JLabel MuestraDatos;
 
 	/**
 	 * Create the panel.
@@ -53,9 +56,27 @@ public class Ejercicio1 extends JPanel {
 		txtFechaNac.setBounds(189, 173, 162, 20);
 		add(txtFechaNac);
 		
+		JLabel JLabel = new JLabel("");
+		JLabel.setBounds(90, 256, 350, 14);
+		add(JLabel);
+		
 		JButton btnMostrar = new JButton("Mostrar");
+		btnMostrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JLabel.setText("Los datos ingresados son: " + txtNombre.getText() + 
+						txtApellido.getText() +  " " + txtTelefono.getText() + " " + txtFechaNac.getText());			
+			}
+		});
 		btnMostrar.setBounds(281, 214, 89, 23);
 		add(btnMostrar);
+		
+		JLabel LblMostrarDatos = new JLabel();
+		LblMostrarDatos.setBounds(281, 250, 20, 20);
+		add(LblMostrarDatos);
+		
+		
+		
+		
 
 	}
 }

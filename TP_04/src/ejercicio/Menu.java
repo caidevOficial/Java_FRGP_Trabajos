@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class Menu extends JPanel {
 
@@ -31,6 +32,8 @@ public class Menu extends JPanel {
 		JButton button_2 = new JButton("Ejercicio 3");
 		button_2.setBounds(157, 182, 110, 23);
 		panel.add(button_2);
+		
+		
 
 	}
 
