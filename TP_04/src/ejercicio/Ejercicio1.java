@@ -63,8 +63,23 @@ public class Ejercicio1 extends JPanel {
 		JButton btnMostrar = new JButton("Mostrar");
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JLabel.setText("Los datos ingresados son: " + txtNombre.getText() + 
-						txtApellido.getText() +  " " + txtTelefono.getText() + " " + txtFechaNac.getText());			
+				
+				if(txtNombre.getText().equals("") && 
+				   txtApellido.getText().equals("") && 
+				   txtTelefono.getText().equals("") &&
+			       txtFechaNac.getText().equals("")) 
+				{
+					
+//					System.out.println("Hola");	
+				}
+				
+				else {
+					
+					JLabel.setText("Los datos ingresados son: " + txtNombre.getText() + 
+							txtApellido.getText() +  " " + txtTelefono.getText() + " " + txtFechaNac.getText());		
+					
+				}
+				
 			}
 		});
 		btnMostrar.setBounds(281, 214, 89, 23);
