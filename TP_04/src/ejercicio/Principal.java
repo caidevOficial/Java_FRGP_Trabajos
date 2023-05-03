@@ -122,10 +122,9 @@ public class Principal extends JFrame {
 		
 	}
 	
-	private int VuelveAPrincipal(JPanel contentPane)
-	{
+	private int VuelveAPrincipal(JPanel contentPane) {
 		Principal panel = new Principal();
-		 System.out.print("llegue aca 1");
+		System.out.print("llegue aca 1");
 		contentPane.setVisible(false);
 		setContentPane(contentPane);
 		contentPane.setVisible(true);

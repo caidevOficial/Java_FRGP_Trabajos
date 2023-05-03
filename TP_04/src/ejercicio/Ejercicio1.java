@@ -44,81 +44,74 @@ public class Ejercicio1 extends JPanel {
 	 */
 	public Ejercicio1() {
 		setLayout(null);
-						
+
 		JLabel lblNewLabel = new JLabel("Nombre");
 		lblNewLabel.setBounds(90, 39, 46, 14);
 		add(lblNewLabel);
-		
+
 		JLabel lblApellido = new JLabel("Apellido");
 		lblApellido.setBounds(90, 83, 46, 14);
 		add(lblApellido);
-		
+
 		JLabel lblTelefono = new JLabel("Telefono");
 		lblTelefono.setBounds(90, 130, 66, 14);
 		add(lblTelefono);
-		
+
 		JLabel lblFechaNac = new JLabel("Fecha Nac.");
 		lblFechaNac.setBounds(90, 173, 67, 14);
 		add(lblFechaNac);
-		
+
 		txtNombre = new JTextField();
 		txtNombre.setBounds(189, 36, 162, 20);
 		add(txtNombre);
 		txtNombre.setColumns(10);
-		
+
 		txtApellido = new JTextField();
 		txtApellido.setColumns(10);
 		txtApellido.setBounds(189, 80, 162, 20);
 		add(txtApellido);
-		
+
 		txtTelefono = new JTextField();
 		txtTelefono.setColumns(10);
 		txtTelefono.setBounds(189, 127, 162, 20);
 		add(txtTelefono);
-		
+
 		txtFechaNac = new JTextField();
 		txtFechaNac.setColumns(10);
 		txtFechaNac.setBounds(189, 173, 162, 20);
 		add(txtFechaNac);
-		
+
 		JLabel JLabel = new JLabel("");
 		JLabel.setBounds(90, 256, 350, 14);
 		add(JLabel);
-		
+
 		JButton btnMostrar = new JButton("Mostrar");
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				if(txtNombre.getText().isEmpty() || 
-				   txtApellido.getText().isEmpty() || 
-				   txtTelefono.getText().isEmpty() ||
-			       txtFechaNac.getText().isEmpty()){
-					if(txtNombre.getText().isEmpty()) 
-					{
-						txtNombre.setBackground(Color.red);						
+				if (txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() ||
+						txtTelefono.getText().isEmpty() || txtFechaNac.getText().isEmpty()) {
+
+					if (txtNombre.getText().isEmpty()) {
+						txtNombre.setBackground(Color.red);
 					}
-					
-					if(txtApellido.getText().isEmpty()) 
-					{
-						txtApellido.setBackground(Color.red);						
+
+					if (txtApellido.getText().isEmpty()) {
+						txtApellido.setBackground(Color.red);
 					}
-					
-					if(txtTelefono.getText().isEmpty()) 
-					{
-						txtTelefono.setBackground(Color.red);						
+
+					if (txtTelefono.getText().isEmpty()) {
+						txtTelefono.setBackground(Color.red);
 					}
-					
-					if(txtFechaNac.getText().isEmpty()) 
-					{
-						txtFechaNac.setBackground(Color.red);						
+
+					if (txtFechaNac.getText().isEmpty()) {
+						txtFechaNac.setBackground(Color.red);
 					}
-				}
-				
-				else {
-					
-					JLabel.setText(String.format(
-							"Los datos ingresados son: %s %s %s %s", txtNombre.getText(), txtApellido.getText(), 
-							txtTelefono.getText(), txtFechaNac.getText()));
+				} else {
+					JLabel.setText(
+							String.format(
+									"Los datos ingresados son: %s %s %s %s", txtNombre.getText(), txtApellido.getText(),
+									txtTelefono.getText(), txtFechaNac.getText()));
+
 					txtNombre.setText("");
 					txtNombre.setBackground(Color.white);
 					txtApellido.setText("");
@@ -127,21 +120,15 @@ public class Ejercicio1 extends JPanel {
 					txtTelefono.setBackground(Color.white);
 					txtFechaNac.setText("");
 					txtFechaNac.setBackground(Color.white);
-					
 				}
-				
+
 			}
 		});
 		btnMostrar.setBounds(281, 214, 89, 23);
 		add(btnMostrar);
-		
+
 		JLabel LblMostrarDatos = new JLabel();
 		LblMostrarDatos.setBounds(281, 250, 20, 20);
 		add(LblMostrarDatos);
-		
-		
-		
-		
-
 	}
 }
