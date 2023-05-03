@@ -99,8 +99,14 @@
                     <li>
                         <a href="./TP_01/src">Trabajo Pr&aacute;ctico 01
                     </li>
-			  <li>
+			              <li>
                         <a href="./TP_02/src">Trabajo Pr&aacute;ctico 02
+                    </li>
+                    <li>
+                        <a href="./TP_03/src">Trabajo Pr&aacute;ctico 03
+                    </li>
+                    <li>
+                        <a href="./TP_04/src">Trabajo Pr&aacute;ctico 04
                     </li>
                 </ul>
             </td>

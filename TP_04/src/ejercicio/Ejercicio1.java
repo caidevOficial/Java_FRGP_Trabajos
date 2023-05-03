@@ -1,3 +1,27 @@
+/**
+ * MIT License
+ *
+ * Copyright (C) 2023 <Grupo 3 - UTN FRGP>
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package ejercicio;
 
 import javax.swing.JPanel;
@@ -30,7 +54,7 @@ public class Ejercicio1 extends JPanel {
 		add(lblApellido);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
-		lblTelefono.setBounds(90, 130, 46, 14);
+		lblTelefono.setBounds(90, 130, 66, 14);
 		add(lblTelefono);
 		
 		JLabel lblFechaNac = new JLabel("Fecha Nac.");
@@ -65,27 +89,26 @@ public class Ejercicio1 extends JPanel {
 		btnMostrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				if(txtNombre.getText().equals("") || 
-				   txtApellido.getText().equals("") || 
-				   txtTelefono.getText().equals("") ||
-			       txtFechaNac.getText().equals("")) 
-				{
-					if(txtNombre.getText().equals("")) 
+				if(txtNombre.getText().isEmpty() || 
+				   txtApellido.getText().isEmpty() || 
+				   txtTelefono.getText().isEmpty() ||
+			       txtFechaNac.getText().isEmpty()){
+					if(txtNombre.getText().isEmpty()) 
 					{
 						txtNombre.setBackground(Color.red);						
 					}
 					
-					if(txtApellido.getText().equals("")) 
+					if(txtApellido.getText().isEmpty()) 
 					{
 						txtApellido.setBackground(Color.red);						
 					}
 					
-					if(txtTelefono.getText().equals("")) 
+					if(txtTelefono.getText().isEmpty()) 
 					{
 						txtTelefono.setBackground(Color.red);						
 					}
 					
-					if(txtFechaNac.getText().equals("")) 
+					if(txtFechaNac.getText().isEmpty()) 
 					{
 						txtFechaNac.setBackground(Color.red);						
 					}
@@ -93,13 +116,17 @@ public class Ejercicio1 extends JPanel {
 				
 				else {
 					
-					JLabel.setText("Los datos ingresados son: " + txtNombre.getText() + " " + 
-							txtApellido.getText() +  " " + txtTelefono.getText() + " " + txtFechaNac.getText());	
-					
+					JLabel.setText(String.format(
+							"Los datos ingresados son: %s %s %s %s", txtNombre.getText(), txtApellido.getText(), 
+							txtTelefono.getText(), txtFechaNac.getText()));
 					txtNombre.setText("");
+					txtNombre.setBackground(Color.white);
 					txtApellido.setText("");
+					txtApellido.setBackground(Color.white);
 					txtTelefono.setText("");
+					txtTelefono.setBackground(Color.white);
 					txtFechaNac.setText("");
+					txtFechaNac.setBackground(Color.white);
 					
 				}
 				
