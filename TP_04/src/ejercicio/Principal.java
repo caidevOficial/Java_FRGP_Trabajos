@@ -98,6 +98,17 @@ public class Principal extends JFrame {
 		panel.add(btnEjercicio1);
 		
 		JButton btnEjercicio2 = new JButton("Ejercicio 2");
+		btnEjercicio2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ejercicio2 Ejer = new Ejercicio2();
+				VentanaActual = "Ejercicio2";
+				//contentPane.setVisible(false);
+				//setContentPane(Ejer);		
+				Ejer.setVisible(true);
+				//contentPane.setVisible(true);
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			}
+		});
 		btnEjercicio2.setBounds(157, 114, 110, 23);
 		panel.add(btnEjercicio2);
 		
