@@ -117,7 +117,9 @@ public class Principal extends JFrame {
 				contentPane.setVisible(true);
 				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
-		}
+		});
+		btnEjercicio3.setBounds(157, 182, 110, 23);
+		panel.add(btnEjercicio3);
 		
 		
 		//ACA ENTRA CUANDO SE APRETA CERRAR LA VENTANA
