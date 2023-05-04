@@ -56,6 +56,7 @@ public class Menu extends JPanel {
 		JButton button_2 = new JButton("Ejercicio 3");
 		button_2.setBounds(157, 182, 110, 23);
 		panel.add(button_2);
+		
 	}
 
 }

@@ -101,9 +101,24 @@ public class Principal extends JFrame {
 		btnEjercicio2.setBounds(157, 114, 110, 23);
 		panel.add(btnEjercicio2);
 		
+		
+		///JButton btnEjercicio3 = new JButton("Ejercicio 3");
+		///btnEjercicio3.setBounds(157, 182, 110, 23);
+		///panel.add(btnEjercicio3);
+		
 		JButton btnEjercicio3 = new JButton("Ejercicio 3");
-		btnEjercicio3.setBounds(157, 182, 110, 23);
-		panel.add(btnEjercicio3);
+		btnEjercicio3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ejercicio3 ej3 = new Ejercicio3();
+				VentanaActual = "Ejercicio3";
+				contentPane.setVisible(false);
+				setContentPane(ej3);
+				ej3.setVisible(true);
+				contentPane.setVisible(true);
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			}
+		}
+		
 		
 		//ACA ENTRA CUANDO SE APRETA CERRAR LA VENTANA
 		addWindowListener(new WindowAdapter() {
