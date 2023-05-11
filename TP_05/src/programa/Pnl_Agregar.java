@@ -67,11 +67,10 @@ public class Pnl_Agregar extends JPanel {
 				
 				LinkedList<Peliculas> listaPeliculas = new LinkedList<Peliculas>();
 				Peliculas p1 = new Peliculas();
-				//p1.setId(id);
+				
+				p1.setId(Integer.parseInt(lbl_ID.getText()));
 				p1.setNombre(txt_Nombre.getText());
-				
 				Categorias cat = new Categorias((String)comboBox.getSelectedItem());
-				
 				p1.setGenero(cat);
 				
 				listaPeliculas.add(p1);
