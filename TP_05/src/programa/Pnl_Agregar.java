@@ -70,7 +70,7 @@ public class Pnl_Agregar extends JPanel {
 				
 				p1.setId(Integer.parseInt(lbl_ID.getText()));
 				p1.setNombre(txt_Nombre.getText());
-				Categorias cat = new Categorias((String)comboBox.getSelectedItem());
+				Categorias cat = new Categorias(comboBox.getSelectedItem().toString());
 				p1.setGenero(cat);
 				
 				listaPeliculas.add(p1);
