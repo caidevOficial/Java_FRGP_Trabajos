@@ -5,9 +5,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import dominio.Categorias;
+import dominio.Peliculas;
 
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.awt.event.ActionEvent;
 
 public class Pnl_Agregar extends JPanel {
 	private JTextField txt_Nombre;
@@ -57,6 +62,22 @@ public class Pnl_Agregar extends JPanel {
 		comboBox.addItem(new Categorias("Romantica"));
 		
 		btn_Aceptar = new JButton("Aceptar");
+		btn_Aceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				LinkedList<Peliculas> listaPeliculas = new LinkedList<Peliculas>();
+				Peliculas p1 = new Peliculas();
+				//p1.setId(id);
+				p1.setNombre(txt_Nombre.getText());
+				
+				Categorias cat = new Categorias((String)comboBox.getSelectedItem());
+				
+				p1.setGenero(cat);
+				
+				listaPeliculas.add(p1);
+				
+			}
+		});
 		btn_Aceptar.setBounds(61, 219, 118, 23);
 		add(btn_Aceptar);
 
