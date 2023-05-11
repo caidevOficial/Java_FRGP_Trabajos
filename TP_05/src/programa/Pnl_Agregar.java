@@ -22,6 +22,7 @@ public class Pnl_Agregar extends JPanel {
 	private JLabel lblNewLabel_2;
 	private JComboBox<Categorias> comboBox;
 	private JButton btn_Aceptar;
+	private LinkedList<Peliculas> listaPeliculas;
 	
 	private int CantidadRegistrosActual;
 	
@@ -65,7 +66,7 @@ public class Pnl_Agregar extends JPanel {
 		btn_Aceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				LinkedList<Peliculas> listaPeliculas = new LinkedList<Peliculas>();
+				
 				Peliculas p1 = new Peliculas();
 				
 				p1.setId(Integer.parseInt(lbl_ID.getText()));
