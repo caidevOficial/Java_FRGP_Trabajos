@@ -12,6 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JTable;
 import java.awt.Canvas;
 import java.awt.SystemColor;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ejercicio3 extends JPanel {
 	public Ejercicio3() {
@@ -66,6 +69,49 @@ public class Ejercicio3 extends JPanel {
 		textField.setColumns(10);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String SistemaOperativos = "";
+				String Programacion = "";
+				String Administracion = "";
+				String DiseñoGrafico = "";
+				
+				if(rdbtnWindows.isSelected()==true) {
+					SistemaOperativos = "Windows";
+				}
+				
+				if(rdbtnMac.isSelected()==true) {
+					SistemaOperativos = "Mac";
+				}
+				
+				if(rdbtnLinux.isSelected()==true) {
+					SistemaOperativos = "Linux";
+				}
+				
+				
+				if(chckbxProgramacion.isSelected()==true) {
+					Programacion = "Programacion";
+				}
+				
+				if(chckbxAdministracin.isSelected()==true) {
+					Administracion = "Administracion";
+				}
+				
+				if(chckbxDiseoGrfico.isSelected()==true) {
+					DiseñoGrafico = "Diseño Grafico";
+				}
+				
+				
+				
+					
+					JOptionPane.showMessageDialog(null,
+							SistemaOperativos + " - " + Programacion+ " - " + Administracion+ " - " 
+							+ DiseñoGrafico + " - " + textField.getText(), 
+			                "Mensaje",
+			                JOptionPane.INFORMATION_MESSAGE);		
+			}
+		});
 		btnAceptar.setBounds(311, 246, 97, 25);
 		panel.add(btnAceptar);
 		
