@@ -26,11 +26,7 @@ package ejercicio;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 public class Menu extends JPanel {
 
@@ -44,18 +40,12 @@ public class Menu extends JPanel {
 		panel.setLayout(null);
 		add(panel, BorderLayout.CENTER);
 
-		JButton btnEjercicio1 = new JButton("Ejercicio 1");
-
-		btnEjercicio1.setBounds(157, 46, 110, 23);
-		panel.add(btnEjercicio1);
-
-		JButton button_1 = new JButton("Ejercicio 2");
-		button_1.setBounds(157, 114, 110, 23);
-		panel.add(button_1);
-
-		JButton button_2 = new JButton("Ejercicio 3");
-		button_2.setBounds(157, 182, 110, 23);
-		panel.add(button_2);
+		int yAxis = 46;
+		for(int i = 0; i < 3; i++){
+			JButton btnEjercicio = new JButton(String.format("Ejercicio %i", i+1));
+			btnEjercicio.setBounds(157, yAxis, 110, 23);
+			panel.add(btnEjercicio);
+			yAxis = yAxis + 68;
+		}
 	}
-
 }
