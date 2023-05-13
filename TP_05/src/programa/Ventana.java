@@ -13,14 +13,23 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * The `Ventana` class is a JFrame that contains a JMenuBar with a JMenu called "Peliculas" and two
+ * JMenuItems, "Agregar" and "Listar", with the former creating a new `Pnl_Agregar` object and setting
+ * it as the content pane of the JFrame.
+ */
 public class Ventana extends JFrame {
 
 	private JPanel contentPane;
 	private DefaultListModel<Categorias> LtModel;
 
-	/**
-	 * Create the frame.
-	 */
+	// This is the constructor method for the `Ventana` class. It initializes a `DefaultListModel` object
+	// called `LtModel`, sets the default close operation for the JFrame, sets the size and position of
+	// the JFrame, creates a JMenuBar and adds a JMenu called "Peliculas" to it. It also adds two
+	// JMenuItems to the "Peliculas" menu, one called "Agregar" and the other called "Listar". The
+	// "Agregar" JMenuItem has an ActionListener that creates a new `Pnl_Agregar` object and sets it as
+	// the content pane of the JFrame. Finally, it creates a new JPanel called `contentPane`, sets its
+	// border and layout, and sets it as the content pane of the JFrame.
 	public Ventana() {
 		
 		LtModel = new DefaultListModel<Categorias>();
@@ -48,6 +57,7 @@ public class Ventana extends JFrame {
 		
 		JMenuItem mntmListar = new JMenuItem("Listar");
 		mnPeliculas.add(mntmListar);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));

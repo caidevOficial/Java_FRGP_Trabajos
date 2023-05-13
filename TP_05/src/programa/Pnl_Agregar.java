@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.awt.event.ActionEvent;
 
+/**
+ * This is a JPanel class that allows the user to add a new movie to a linked list of movies, including
+ * its ID, name, and genre.
+ */
 public class Pnl_Agregar extends JPanel {
 	private JTextField txt_Nombre;
 	private JLabel lblNewLabel;
@@ -26,9 +30,8 @@ public class Pnl_Agregar extends JPanel {
 	
 	private int CantidadRegistrosActual;
 	
-		/**
-	 * Create the panel.
-	 */
+	// This is a constructor for a JPanel called "Pnl_Agregar". It takes an integer parameter called
+	// "ultimoID".
 	public Pnl_Agregar(int ultimoID) {
 		setLayout(null);
 		
@@ -66,21 +69,17 @@ public class Pnl_Agregar extends JPanel {
 		btn_Aceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				
 				Peliculas p1 = new Peliculas();
-				
 				p1.setId(Integer.parseInt(lbl_ID.getText()));
 				p1.setNombre(txt_Nombre.getText());
+				
 				Categorias cat = new Categorias(comboBox.getSelectedItem().toString());
 				p1.setGenero(cat);
 				
 				listaPeliculas.add(p1);
-				
 			}
 		});
 		btn_Aceptar.setBounds(61, 219, 118, 23);
 		add(btn_Aceptar);
-
 	}
-
 }
