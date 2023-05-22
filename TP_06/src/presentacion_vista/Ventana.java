@@ -41,6 +41,7 @@ public class Ventana extends JFrame {
 
 	private JPanel contentPane;
 	private JMenuBar menuBar;
+	private JMenuItem mntmEliminar;
 	
 	/**
 	 * Create the frame.
@@ -70,5 +71,10 @@ public class Ventana extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+	}
+	
+	
+	public JMenuItem getMntmEliminar() {
+		return mntmEliminar;
 	}
 }

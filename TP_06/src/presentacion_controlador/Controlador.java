@@ -35,6 +35,7 @@ import javax.swing.JPanel;
 import entidad.Persona;
 import negocio.IPersonaNegocio;
 import presentacion_vista.Pnl_Agregar;
+import presentacion_vista.Pnl_Eliminar;
 import presentacion_vista.Ventana;
 
 /**
@@ -45,13 +46,21 @@ public class Controlador implements ActionListener {
 	
 	private Ventana VentanaPrincipal;
 	private IPersonaNegocio PNeg; 
+	private Pnl_Eliminar pnlEliminarPersona;
 	
-	public Controlador(Ventana VentanaPrincipal, IPersonaNegocio negPers) {
+	
+	public Controlador(Ventana VentanaPrincipal, IPersonaNegocio negPers) 
+	{
 	this.VentanaPrincipal = VentanaPrincipal;
 	this.PNeg = negPers;
 	this.VentanaPrincipal.getJMenuBar().getMenu(0).getItem(0).addActionListener(a->Poner_PnlAgregar(a));
 	//this.VentanaPrincipal.getMenuBar().getMenu(0).getItem(0).addActionListener(a->Poner_PnlAgregar(a));
 	
+	this.pnlEliminarPersona = new Pnl_Eliminar();
+	
+	
+	
+	this.VentanaPrincipal.getMntmEliminar().addActionListener(a->EventoClickMenu_AbrirPanel_EliminarPersona(a));
 	}
 
 	private void Poner_PnlAgregar(ActionEvent a) {
@@ -133,6 +142,18 @@ public class Controlador implements ActionListener {
 		
 		JOptionPane.showMessageDialog(VentanaPrincipal, "Es necesario completar todos los campos");
 			
+	}
+	
+public void EventoClickMenu_AbrirPanel_EliminarPersona(ActionEvent a) {
+		
+	VentanaPrincipal.getContentPane().removeAll();
+	VentanaPrincipal.getContentPane().add(pnlEliminarPersona);
+	VentanaPrincipal.getContentPane().repaint();
+	VentanaPrincipal.getContentPane().revalidate();
+		
+		pnlEliminarPersona.llenarList(this.PNeg.readAll());
+		
+		System.out.println("Llego");
 	}
 
 	@Override

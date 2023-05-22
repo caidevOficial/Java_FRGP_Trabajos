@@ -58,4 +58,6 @@ public interface IPersonaNegocio {
 	
 	public boolean delete(Persona persona_a_eliminar);
 	
+	
+	
 }
