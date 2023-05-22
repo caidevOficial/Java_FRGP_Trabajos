@@ -151,7 +151,7 @@ public void EventoClickMenu_AbrirPanel_EliminarPersona(ActionEvent a) {
 	VentanaPrincipal.getContentPane().repaint();
 	VentanaPrincipal.getContentPane().revalidate();
 		
-//		pnlEliminarPersona.llenarList(this.PNeg.readAll());
+		pnlEliminarPersona.llenarList(this.PNeg.ListaPersona());
 		
 		System.out.println("Llego");
 	}
