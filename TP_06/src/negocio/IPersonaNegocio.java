@@ -55,4 +55,7 @@ public interface IPersonaNegocio {
 	 */
 	public boolean ExistePersona(String dni);
 	
+	
+	public boolean delete(Persona persona_a_eliminar);
+	
 }

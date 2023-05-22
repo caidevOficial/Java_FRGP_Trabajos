@@ -29,8 +29,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 
-import com.mysql.cj.protocol.Resultset;
-
+import dao.PersonaDAO;
+import daolmpl.personaDaoImpl;
 import entidad.Persona;
 import negocio.IPersonaNegocio;
 
@@ -39,6 +39,8 @@ import negocio.IPersonaNegocio;
  * in a MySQL database.
  */
 public class PersonaNegocioImple implements IPersonaNegocio {
+	
+	PersonaDAO pdao = new personaDaoImpl();
 
 	private String host = "jdbc:mysql://localhost:3306/";
 	private String user = "root";
@@ -108,5 +110,16 @@ public class PersonaNegocioImple implements IPersonaNegocio {
 
 		// NO EXISTE
 		return false;
+	}
+
+	@Override
+	public boolean delete(Persona persona_a_eliminar) {
+		boolean estado=false;
+		if(persona_a_eliminar.getDni().trim().length()>0 )
+		{
+			estado=pdao.delete(persona_a_eliminar);
+		}
+		return estado;
+		
 	}
 }
