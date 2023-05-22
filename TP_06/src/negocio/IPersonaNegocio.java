@@ -24,6 +24,8 @@
 
  package negocio;
 
+import java.util.ArrayList;
+
 import entidad.Persona;
 
 /**
@@ -59,5 +61,6 @@ public interface IPersonaNegocio {
 	public boolean delete(Persona persona_a_eliminar);
 	
 	
+	public ArrayList<Persona> ListaPersona();
 	
 }

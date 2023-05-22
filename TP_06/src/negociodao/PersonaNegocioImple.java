@@ -28,6 +28,7 @@ import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import dao.PersonaDAO;
 import daolmpl.personaDaoImpl;
@@ -121,5 +122,31 @@ public class PersonaNegocioImple implements IPersonaNegocio {
 		}
 		return estado;
 		
+	}
+	
+	@Override
+	public ArrayList<Persona> ListaPersona() {
+	Connection cn = null;
+		
+		try {
+			cn = DriverManager.getConnection(host+dbName,user,pass);
+			java.sql.Statement st =  cn.createStatement();
+			String query = "SELECT * FROM `personas`";
+			ArrayList<Persona> Lista = new ArrayList<Persona>();
+			//Persona obj;
+			ResultSet rs = st.executeQuery(query);
+			while(rs.next())
+			{
+				//obj = new Persona(rs.getString("nombre"),rs.getString("apellido"),rs.getString("dni"));
+				Lista.add(new Persona(rs.getString("nombre"),rs.getString("apellido"),rs.getString("dni")));			
+			}
+			return Lista;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		// NO EXISTE
+		return null;
 	}
 }
