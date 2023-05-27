@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.Segurodao;
+import entidad.Seguro;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+
 /**
  * Servlet implementation class ServletSeguro
  */
@@ -25,8 +29,25 @@ public class ServletSeguro extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		Segurodao segdao = new Segurodao();
+		int nuevoSeg = segdao.NuevoId();
 		
+		if(request.getParameter("BtnAgregarSeguro")!= null) 
+		{
+			
+			Seguro seguro = new Seguro();
+			Segurodao SDao = new Segurodao();
+			
+			seguro.setId(nuevoSeg);
+			seguro.setDescripcion(request.getParameter("Descrip"));
+			seguro.setTipo(Integer.parseInt(request.getParameter("Tipo")));
+			seguro.setCosContra(Float.parseFloat(request.getParameter("CostoCont")));
+			seguro.setCosAseg(Float.parseFloat(request.getParameter("CostoAseg")));
+			
+			SDao.AgregarSeguro(seguro);
+		}
 	}
 
 	/**

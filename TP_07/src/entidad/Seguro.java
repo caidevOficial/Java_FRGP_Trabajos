@@ -8,6 +8,13 @@ public class Seguro {
 	private float CosContra;
 	private float CosAseg;
 	
+	
+	public Seguro()
+	{
+		
+	}
+	
+	
 	public Seguro(int id, String descri, int tipo, float costCont, float CostAseg)
 	{
 		this.Id = id;
