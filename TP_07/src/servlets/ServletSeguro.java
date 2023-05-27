@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,22 +33,28 @@ public class ServletSeguro extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		Segurodao segdao = new Segurodao();
-		int nuevoSeg = segdao.NuevoId();
 		
-		if(request.getParameter("BtnAgregarSeguro")!= null) 
+		
+		if(request.getParameter("BtnAgregarSeguro") != null) 
 		{
 			
 			Seguro seguro = new Seguro();
 			Segurodao SDao = new Segurodao();
 			
-			seguro.setId(nuevoSeg);
+			boolean SeAgrego = false;
+			
+//			seguro.setId(nuevoSeg);
 			seguro.setDescripcion(request.getParameter("Descrip"));
 			seguro.setTipo(Integer.parseInt(request.getParameter("Tipo")));
 			seguro.setCosContra(Float.parseFloat(request.getParameter("CostoCont")));
 			seguro.setCosAseg(Float.parseFloat(request.getParameter("CostoAseg")));
+		
+			SeAgrego = SDao.AgregarSeguro(seguro);
 			
-			SDao.AgregarSeguro(seguro);
+			request.setAttribute("SeguroAgregado", SeAgrego);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/AgregarSeguro.jsp");
+			rd.forward(request, response);
 		}
 	}
 

@@ -1,4 +1,4 @@
-<%//@page import="dao.Segurodao"%>
+<%@page import="dao.Segurodao"%>
 <%//@ page import="dao.Segurodao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -16,22 +16,46 @@
 
 <%
  
-// Segurodao SDao = new Segurodao();
-// int nuevoSeg = SDao.NuevoId();
+	 Segurodao SDao = new Segurodao();
+	 int nuevoSeg = SDao.NuevoId();
+	
+	%>
+	
+	
+	idSeguro <%=nuevoSeg %> <br> 
+	Descripcion <input type="text" name="Descrip"> <br>
+	Tipo Seguro <select name="Tipo"> <br>
+				<option> Seguro de casas</option>
+				
+				</select>  <br>
+	
+	Costo Contratación <input type="text" name="CostoCont">  <br>
+	Costo maxímo Asegurado <input type="text" name="CostoAseg">  <br>
+	<input type="submit" name="BtnAgregarSeguro" value="Aceptar">
+</form>
+
+
+<%
+
+	boolean SeAgregoSeguro = false;
+	if(request.getAttribute("SeguroAgregado") != null)
+	{
+		
+		SeAgregoSeguro = Boolean.parseBoolean(request.getAttribute("SeguroAgregado").toString());
+		
+	}
 
 %>
 
-<%-- idSeguro <%=nuevoSeg %> <br> --%>
-Descripcion <input type="text" name="Descrip"> <br>
-Tipo Seguro <select name="Tipo"> <br>
-			<option> Seguro de casas</option>
-			
-			</select>  <br>
-
-Costo Contratación <input type="text" name="CostoCont">  <br>
-Costo maxímo Asegurado <input type="text" name="CostoAseg">  <br>
-<input type="submit" name="BtnAgregarSeguro" value="Aceptar">
-</form>
+<%
+	
+	if(SeAgregoSeguro == true)
+	{%>
+		
+	Seguro Agregado
+		
+	<% } 
+	%>
 
 </body>
 </html>
