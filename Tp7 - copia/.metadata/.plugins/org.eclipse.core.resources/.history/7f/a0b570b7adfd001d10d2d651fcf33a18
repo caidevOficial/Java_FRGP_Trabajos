@@ -1,0 +1,10 @@
+package Entidad;
+
+public class TipoSeguro {
+	
+	private int idTipo;
+	private String descripcion;
+	
+	
+
+}

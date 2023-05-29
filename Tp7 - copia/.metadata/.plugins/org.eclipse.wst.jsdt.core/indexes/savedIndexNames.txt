@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Users\Tobias\Desktop\Proyectos de java\Java_FRGP_Trabajos\Tp7 - copia\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+174420876.index
+3107604830.index
+283333683.index
+3410689976.index
+2311790578.index

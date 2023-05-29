@@ -1,0 +1,40 @@
+package dao;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import Entidad.Seguro;
+
+public class TipoSeguroDao {
+	
+	
+	public List<Seguro> readAll() {
+		
+		PreparedStatement statement;
+		ResultSet resultSet; 
+		ArrayList<Seguro> personas = new ArrayList<Seguro>();
+		Conexion conexion = Conexion.getConexion();
+		try 
+		{
+			statement = conexion.getSQLConexion().prepareStatement("SELECT idSeguro, descripcion, idTipo, costoContratacion,costoAsegurado FROM Seguros ");
+			resultSet = statement.executeQuery();
+			while(resultSet.next())
+			{
+				personas.add(getSeguro(resultSet));
+			}
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		return personas;
+		
+		
+	}
+
+
+
+}
