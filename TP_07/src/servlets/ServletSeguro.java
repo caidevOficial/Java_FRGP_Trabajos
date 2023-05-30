@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.Segurodao;
 import entidad.Seguro;
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 
 /**
  * Servlet implementation class ServletSeguro
@@ -43,11 +43,22 @@ public class ServletSeguro extends HttpServlet {
 			
 			boolean SeAgrego = false;
 			
+			try {
+				seguro.setDescripcion(request.getParameter("Descrip"));
+				seguro.setTipo(Integer.parseInt(request.getParameter("Tipo")));
+				seguro.setCosContra(Float.parseFloat(request.getParameter("CostoCont")));
+				seguro.setCosAseg(Float.parseFloat(request.getParameter("CostoAseg")));	
+			} catch (Exception e) {
+								
+				request.setAttribute("DatosIncorrecots", true);
+				
+				RequestDispatcher rd = request.getRequestDispatcher("/AgregarSeguro.jsp");
+				rd.forward(request, response);
+			}
+			
+			
 //			seguro.setId(nuevoSeg);
-			seguro.setDescripcion(request.getParameter("Descrip"));
-			seguro.setTipo(Integer.parseInt(request.getParameter("Tipo")));
-			seguro.setCosContra(Float.parseFloat(request.getParameter("CostoCont")));
-			seguro.setCosAseg(Float.parseFloat(request.getParameter("CostoAseg")));
+			
 		
 			SeAgrego = SDao.AgregarSeguro(seguro);
 			
@@ -56,6 +67,39 @@ public class ServletSeguro extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/AgregarSeguro.jsp");
 			rd.forward(request, response);
 		}
+		
+		
+		
+		if(request.getParameter("BtnFiltrar") != null)
+		{
+			String WHERE = "WHERE IdTipo = ";
+			switch (request.getParameter("FiltroTipo")) { 
+		    case "Seguro de casas":
+		    	WHERE = WHERE + "1";
+		     // secuencia de sentencias.
+		     break;
+		    case "Seguro de vida":
+		    	WHERE = WHERE + "2";
+		     // secuencia de sentencias.
+		     break;
+		     
+		    case "Seguro de motos":
+		    	WHERE = WHERE + "3";
+		     // secuencia de sentencias.
+		     break;
+		    default:
+		    	WHERE = "";
+		     
+		  }
+			Segurodao SDao = new Segurodao();
+			ArrayList<Seguro> ListaSeguros= SDao.readAll(WHERE);
+			
+			request.setAttribute("ListaSeguros", ListaSeguros);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/ListarSeguros.jsp");
+			rd.forward(request, response);
+		}
+		
 	}
 
 	/**

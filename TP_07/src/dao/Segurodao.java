@@ -23,7 +23,7 @@ public class Segurodao {
 		boolean isInsertExitoso = false;
 		
 		try {
-			statement = conexion.prepareStatement("Insert into Seguro(id, Descripcion, idTipo, costoContratacion, costoAsegurado) values (?, ?, ?, ?, ?)");
+			statement = conexion.prepareStatement("Insert into Seguros(idSeguro,descripcion,idTipo,costoContratacion, costoAsegurado) values (?, ?, ?, ?, ?)");
 			statement.setInt(1, Seg.getId());
 			statement.setString(2, Seg.getDescripcion());
 			statement.setInt(3, Seg.getTipo());
@@ -76,7 +76,7 @@ public class Segurodao {
 		
 	}
 	
-public List<Seguro> readAll(String Where) {
+public ArrayList<Seguro> readAll(String Where) {
 		
 		PreparedStatement statement;
 		ResultSet resultSet; 
@@ -100,7 +100,7 @@ public List<Seguro> readAll(String Where) {
 		
 	}
 
-public List<Seguro> readAll() {
+public ArrayList<Seguro> readAll() {
 	
 	PreparedStatement statement;
 	ResultSet resultSet; 
