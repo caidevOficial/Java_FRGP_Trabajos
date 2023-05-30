@@ -101,9 +101,7 @@ public class Seguro {
 	/**
 	 * This Java function sets the value of a variable called "CosContra".
 	 * 
-	 * @param cosContra cosContra is a float type parameter that represents the cosine of the angle
-	 * between the normal vector of a surface and the direction of incident light. It is commonly used in
-	 * computer graphics and 3D rendering to calculate the amount of light reflected off a surface.
+	 * @param cosContra cosContra is a float type parameter that represents the cost of the contract.
 	 */
 	public void setCosContra(float cosContra) {
 		this.CosContra = cosContra;
@@ -122,8 +120,7 @@ public class Seguro {
 	/**
 	 * This is a Java function that sets the value of a variable called "CosAseg".
 	 * 
-	 * @param cosAseg cosAseg is a float variable that represents the cosine of an angle in radians. It is
-	 * being set to a new value using the setter method setCosAseg.
+	 * @param cosAseg cosAseg is a float variable that represents the assurance cost.
 	 */
 	public void setCosAseg(float cosAseg) {
 		this.CosAseg = cosAseg;
