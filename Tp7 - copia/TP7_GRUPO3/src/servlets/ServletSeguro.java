@@ -31,12 +31,8 @@ public class ServletSeguro extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		
-		
-		if(request.getParameter("BtnAgregarSeguro") != null) 
-		{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getParameter("BtnAgregarSeguro") != null) {
 			
 			Seguro seguro = new Seguro();
 			Segurodao SDao = new Segurodao();
@@ -44,17 +40,13 @@ public class ServletSeguro extends HttpServlet {
 			boolean SeAgrego = false;
 			
 			String Descrpcion = request.getParameter("Descrip");
-			//int Tipo = Integer.parseInt((request.getParameter("Tipo").toString()));
-			//int Tipo = 1;
 			float CosContra = Float.parseFloat(request.getParameter("CostoCont"));
 			float CosAseg = Float.parseFloat(request.getParameter("CostoAseg"));
 			TipoSeguro tiposeguro = new TipoSeguro();
 			
-			//Es no seria asi, estoy harcodeando aca 
 			tiposeguro.setIdTipo(1);
 			
 			
-			//seguro.setId(10);
 			seguro.setDescripcion(Descrpcion);
 			seguro.setTipo(tiposeguro.getIdTipo());
 			seguro.setCosContra(CosContra);
