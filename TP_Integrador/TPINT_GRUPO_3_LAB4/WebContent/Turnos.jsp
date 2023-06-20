@@ -12,7 +12,7 @@
 	</style>
       <link rel="stylesheet" href="~/css/materialize.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Asignaci&oacute;n de turnos</title>
+<title>Asignación de turnos</title>
 </head>
 <body>
  <nav>
@@ -20,7 +20,7 @@
       <a href="#" class="brand-logo">Sistema de turnos</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="GestionAdmin.jsp"><i class="material-icons prefix">home</i></a></li>
-        <li><a href="AMB_Pacientes.jsp"><i class="material-icons prefix">face</i></a></li>
+        <li><a href="ServletPaciente?Listar" name="Listar"><i class="material-icons prefix">face</i></a></li>
         <li><a href="AMB_Medico.jsp"><i class="material-icons prefix">local_hospital</i></a></li>
         <li><a href="Login.jsp"><i class="material-icons prefix">exit_to_app</i></a></li>
       </ul>

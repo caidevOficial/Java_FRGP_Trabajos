@@ -1,3 +1,7 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import= "Entidad.Especialidad" %>
+<%@page import= "java.util.ArrayList" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,7 +21,7 @@
       <a href="#" class="brand-logo">Sistema de turnos</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="GestionAdmin.jsp"><i class="material-icons prefix">home</i></a></li>
-        <li><a href="AMB_Pacientes.jsp"><i class="material-icons prefix">face</i></a></li>
+       <li><a href="ServletPaciente?Listar" name="Listar"><i class="material-icons prefix">face</i></a></li>
         <li><a href="AMB_Medico.jsp"><i class="material-icons prefix">local_hospital</i></a></li>
         <li><a href="Login.jsp"><i class="material-icons prefix">exit_to_app</i></a></li>
       </ul>
@@ -36,26 +40,25 @@
         </thead>
 
         <tbody>
+			<%
+			if(request.getAttribute("ListaEspecialidad") != null)
+			{
+				ArrayList<Especialidad> Lista;
+				Lista = (ArrayList<Especialidad>)request.getAttribute("ListaEspecialidad");
+				for(Especialidad Espe : Lista)
+				{
+					%>
           <tr>
-            <td>Cardiologo</td>
+            <td>
+					<%=Espe.getDescripcion()%>	
+				</td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-          </tr>
-          <tr>
-            <td>Pediatra</td>
-               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
-               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-          </tr>
-          <tr>
-            <td>Ginecologo</td>
-               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
-               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-          </tr>
-            <tr>
-            <td>Odontologo</td>
-               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
-               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-          </tr>
+				
+               </tr>
+					<%	}
+			}
+			%>
         </tbody>
       </table>
 </div>

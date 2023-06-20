@@ -1,3 +1,4 @@
+<%@page import= "java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,18 +13,18 @@
 <title>Paciente</title>
   <style>
     .custom-subheader {
-      margin-top: 20px; /* Ajusta el valor segï¿½n necesites */
+      margin-top: 20px; /* Ajusta el valor según necesites */
     }
   </style>
 </head>
 
-<body>
+<body onload="cargarPaises">
  <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Sistema de turnos</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="GestionAdmin.jsp"><i class="material-icons prefix">home</i></a></li>
-        <li><a href="AMB_Pacientes.jsp"><i class="material-icons prefix">face</i></a></li>
+        <li><a href="ServletPaciente?Listar" name="Listar"><i class="material-icons prefix">face</i></a></li>
         <li><a href="AMB_Medico.jsp"><i class="material-icons prefix">local_hospital</i></a></li>
         <li><a href="Login.jsp"><i class="material-icons prefix">exit_to_app</i></a></li>
       </ul>
@@ -79,25 +80,29 @@
         </div>
                 
 
-         <div class="input-field col s6">
-    <select>
+  <div class="input-field col s6">
+    <select id="pais" onchange="cargarProvincias()" >
       <option value="" disabled selected>Elija su Nacionalidad</option>
-      <option value="1">Argentina</option>
-      <option value="2">Peru</option>
-      <option value="3">Bolivia</option>
-       <option value="3">Brazil</option>
-      
+      <%
+			if(request.getAttribute("ListaPais") != null)
+			{
+				ArrayList<String> Lista;
+				Lista = (ArrayList<String>)request.getAttribute("ListaPais");
+				for(String pais : Lista)
+				{
+					%>
+					  <option><%=pais %></option>
+					<%
+				}
+			}
+					%>
     </select>
-    <label >    <i class="material-icons">map</i>Pa&iacute;s</label>
+    <label >    <i class="material-icons">map</i>País</label>
   </div>
   
     <div class="input-field col s6">
-    <select>
+    <select  id="provincia">
       <option value="" disabled selected>Elija su provincia</option>
-      <option value="1">Buenos Aires</option>
-      <option value="2">Cordoba</option>
-      <option value="3">Neuquen</option>
-       <option value="3">Rio Negro</option>
       
     </select>
     <label><i class="material-icons">place</i>Provincias</label>
@@ -106,10 +111,6 @@
           <div class="input-field col s6">
     <select>
       <option value="" disabled selected>Elija su Localidad</option>
-      <option value="1">San Fernando</option>
-      <option value="2">San Isidro</option>
-      <option value="3">Olivos</option>
-      <option value="3">Martinez</option>   
     </select>
     <label><i class="material-icons">place</i>Localidad</label>
   </div>
@@ -138,12 +139,33 @@
 	 	
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	    <script type="text/javascript" src="~/js/materialize.min.js"></script>
 	   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('select');
       var instances = M.FormSelect.init(elems);
     });
+    
+
+
+    
+      function cargarProvincias() {
+        var paisId = $("#pais").val();
+
+        $.ajax({
+          url: "/ServletGeneral?ListarProvincias",
+          type: "GET",
+          data: { paisId: paisId },
+          success: function(response) {
+            $("#provincia").html(response);
+            $("#localidad").html('<option value="">Seleccione una localidad</option>');
+          }
+        });
+      }
+      
+     
+    
   </script>
 </body>
 </html>

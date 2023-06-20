@@ -1,3 +1,6 @@
+
+<% // <%@page import="com.mysql.cj.Session"%> 
+<%@page import="Entidad.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,16 +19,23 @@
 <title>Gestion</title>
 </head>
 <body>
+<% Usuario user = (Usuario) session.getAttribute("Usuario"); %>
 
-<!-- <div>
-
-<a href="AMB_Pacientes.jsp">AMB Pacientes</a> <br>
-<a href="AMB_Medico.jsp">AMB Medicos</a> <br>
-<a href="Turnos.jsp">Asignacion Turnos</a> <br>
-<a href="Pacientes.jsp">Listado Pacientes</a> <br>
- <a href="Listado_Medicos.jsp">Listado Medicos</a>
-</div  > -->
-
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">GESTION ADMINISTRACION</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<li><%= user.toString() %></li>
+        <li><a href="GestionAdmin.jsp"><i class="material-icons prefix">home</i></a></li>
+        <li><a href="ServletPaciente?Listar" name="Listar"><i class="material-icons prefix">face</i></a></li>
+        <li><a href="AMB_Medico.jsp"><i class="material-icons prefix">local_hospital</i></a></li>
+        <form>
+        <li><a href="Login.jsp" name="Exit" method="post"><i class="material-icons prefix">exit_to_app</i></a></li>
+        </form>
+      </ul>
+    </div>
+  </nav>
+  
 <div class="row">
     <div class="col s12 m4">
         <div class="card">
@@ -41,7 +51,7 @@
                 </p>
             </div>
             <div class="card-action blue-grey darken-3">
-                <a href="AMB_Especialidad.jsp">Ver Mas</a>
+            <a href="ServletEspecialidad?Listar" name="Listar" >Ver Mas</a>
 
             </div>
         </div>
@@ -71,7 +81,7 @@
         <div class="card">
             <div class="card-image center green accent-4">
                 <i class="material-icons large white-text">assignment_ind</i>
-                <a class="btn-floating halfway-fab waves-effect waves-light red" href="Paciente.jsp"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light red" href="ServletGeneral?ListarPais" name="Listar"><i class="material-icons">add</i></a>
             </div>
             <div class="card-content ">
                 <span class="card-title">Pacientes: </span>
@@ -81,7 +91,7 @@
                 </p>
             </div>
             <div class="card-action blue-grey darken-3">
-                <a href="AMB_Pacientes.jsp">Ver Mas</a>
+                <a href="ServletPaciente?Listar" name="Listar">Ver Mas</a>
 
             </div>
         </div>

@@ -1,3 +1,4 @@
+<%@page import="Entidad.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,24 +17,28 @@
 </head>
 <body>
 
-<form action="">
+<%
+	if(request.getParameter("Exit")!= null)
+	{
+		request.getSession().removeAttribute("Usuario");
+	}
+%>
+<form action="ServletUsuario" method="post">
 <div class="container">
     <div class="row">
       <div class="col s12 m6 offset-m3">
         <div class="card">
           <div class="card-content">
-            <span class="card-title">Inicio de Sesi&oacute;n</span>
+            <span class="card-title">Inicio de Sesión</span>
             <form>
               <div class="input-field">
-                <input id="User" type="text" class="validate">
-                <label for="email">Usuario</label>
+                <input id="User" type="text" placeholder="Usuario" class="validate" name="User">
               </div>
               <div class="input-field">
-                <input id="password" type="password" class="validate">
-                <label for="password">Contraseï¿½a</label>
+                <input id="password" type="password" placeholder="Contraseña" class="validate" name="password">
               </div>
               <div class="input-field">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Iniciar Sesi&oacute;n</button>
+                <button class="btn waves-effect waves-light" type="submit" name="btn_Login">Iniciar Sesión</button>
               </div>
             </form>
           </div>

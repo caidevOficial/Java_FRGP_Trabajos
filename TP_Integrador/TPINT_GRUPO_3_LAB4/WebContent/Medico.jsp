@@ -12,7 +12,7 @@
 <title>Medico</title>
   <style>
     .custom-subheader {
-      margin-top: 20px; /* Ajusta el valor segï¿½n necesites */
+      margin-top: 20px; /* Ajusta el valor según necesites */
     }
   </style>
 </head>
@@ -23,7 +23,7 @@
       <a href="#" class="brand-logo">Sistema de turnos</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="GestionAdmin.jsp"><i class="material-icons prefix">home</i></a></li>
-        <li><a href="AMB_Pacientes.jsp"><i class="material-icons prefix">face</i></a></li>
+   <li><a href="ServletPaciente?Listar" name="Listar"><i class="material-icons prefix">face</i></a></li>
         <li><a href="AMB_Medico.jsp"><i class="material-icons prefix">local_hospital</i></a></li>
         <li><a href="Login.jsp"><i class="material-icons prefix">exit_to_app</i></a></li>
       </ul>
@@ -39,20 +39,20 @@
       <div class="row">
         <div class="input-field col s6">
          <i class="material-icons prefix">person</i>
-          <input placeholder="Nombre"  id="Nombre" type="text" class="validate">
+          <input placeholder="Nombre"  id="Nombre" type="text" required class="validate">
         </div>
         <div class="input-field col s6">
          <i class="material-icons prefix">person</i>
-          <input placeholder="Apellido" id="Apellido" type="text" class="validate">
+          <input placeholder="Apellido" id="Apellido" type="text" required class="validate">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">        
           <i class="material-icons prefix">account_box</i>
-            <input placeholder="DNI"  type="text">
+            <input placeholder="DNI"  required type="text">
         </div>
            <div class="input-field col s6">
-    <select>
+    <select required>
       <option value="" disabled selected>Elija su Especialidad</option>
       <option value="1">Cardiologo</option>
       <option value="2">Pediatra</option>
@@ -100,7 +100,7 @@
        <option value="3">Brazil</option>
       
     </select>
-    <label >    <i class="material-icons">map</i>Pa&iacute;s</label>
+    <label >    <i class="material-icons">map</i>País</label>
   </div>
   
     <div class="input-field col s6">
