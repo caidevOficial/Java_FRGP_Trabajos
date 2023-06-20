@@ -9,7 +9,7 @@
 	</style>
       <link rel="stylesheet" href="~/css/materialize.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listado de Pacientes</title>
+<title>Listado de Medicos</title>
 </head>
 <body>
   <nav>
@@ -29,7 +29,9 @@
           <tr>
               <th>Nombre</th>
               <th>Apellido</th>
-              <th>Sexo</th>
+              <th>Especialidad</th>
+                <th>Horario Desde</th>
+                  <th>Horario Hasta</th>
                    <th>Modificar</th>
                     <th>Eliminar</th>
           </tr>
@@ -37,26 +39,32 @@
 
         <tbody>
           <tr>
-            <td>Juan</td>
-            <td>Marquez</td>
-            <td>Masculino</td>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>Cardiologo</td>
+             <td>10 A.M</td>
+              <td>18 P.M</td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
           </tr>
           <tr>
-             <td>Maria</td>
-            <td>Perez</td>
-            <td>Femenino</td>
+            <td>Alan</td>
+                        <td>Jellybean</td>
+             <td>Pediatra</td>
+             <td>12 A.M</td>
+              <td>20 P.M</td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-         </tr>
+          </tr>
           <tr>
-              <td>Luciana</td>
-            <td>Fernandez</td>
-            <td>Femenino</td>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>Ginecologo</td>
+             <td>08 A.M</td>
+              <td>16 P.M</td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-        </tr>
+          </tr>
         </tbody>
       </table>
 

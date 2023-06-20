@@ -9,7 +9,7 @@
 	</style>
       <link rel="stylesheet" href="~/css/materialize.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listado de Pacientes</title>
+<title>Listado de Especialidades</title>
 </head>
 <body>
   <nav>
@@ -24,12 +24,12 @@
     </div>
   </nav>
 <form action="">
- <table>
+<div class = "row">
+<div class = "col s4"></div>
+ <table class = "col s4">
         <thead>
           <tr>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Sexo</th>
+              <th>Especialidad</th>
                    <th>Modificar</th>
                     <th>Eliminar</th>
           </tr>
@@ -37,28 +37,28 @@
 
         <tbody>
           <tr>
-            <td>Juan</td>
-            <td>Marquez</td>
-            <td>Masculino</td>
+            <td>Cardiologo</td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
           </tr>
           <tr>
-             <td>Maria</td>
-            <td>Perez</td>
-            <td>Femenino</td>
+            <td>Pediatra</td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-         </tr>
+          </tr>
           <tr>
-              <td>Luciana</td>
-            <td>Fernandez</td>
-            <td>Femenino</td>
+            <td>Ginecologo</td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
                <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
-        </tr>
+          </tr>
+            <tr>
+            <td>Odontologo</td>
+               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">edit</i></button></td>
+               <td> <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons prefix">delete</i></button></td>
+          </tr>
         </tbody>
       </table>
+</div>
 
 </form>
 </body>
